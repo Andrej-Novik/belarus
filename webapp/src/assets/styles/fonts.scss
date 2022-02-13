@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-@mixin H12 {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  letter-spacing: 6%;
+@mixin H1 {
+  font-size: 7.5rem;
+  line-height: 7.5rem;
 }
-@mixin H32 {
-  font-size: 2rem;
-  line-height: 2.5rem;
-  font-weight: 500;
+@mixin H18 {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+@mixin H24 {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
