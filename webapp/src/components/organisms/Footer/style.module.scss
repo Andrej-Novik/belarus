@@ -1,0 +1,45 @@
+@import "../../../assets//styles/common.scss";
+
+footer {
+  background-color: #375b3b;
+  .container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: $white;
+    .links {
+      max-width: 158px;
+      padding-top: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      a {
+        margin: 0 0 2rem 0;
+        font-size: 30px;
+      }
+    }
+    .places {
+      display: flex;
+      flex-direction: column;
+      a {
+        margin: 0 0 2rem 0;
+        @include H24;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    .about {
+      max-width: 573px;
+      h3 {
+        margin: 0 0 1rem 0;
+        font-size: 36px;
+      }
+      p {
+        margin: 0 0 1rem 0;
+        @include H18;
+      }
+    }
+  }
+}
