@@ -4,6 +4,7 @@ import Main from "./components/pages/Main";
 import Header from "./components/organisms/Header";
 import style from "./app.module.scss";
 
+
 function App() {
   return (
     <BrowserRouter>
