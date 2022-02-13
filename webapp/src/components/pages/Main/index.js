@@ -1,4 +1,5 @@
 import Banner from "../../organisms/Banner";
+import CardList from "../../organisms/CardList";
 import History from "../../organisms/History";
 import style from "./style.module.scss";
 import image from "../../../assets/img/history.png";
@@ -13,6 +14,7 @@ const Main = () => {
         <img src={image} alt="" />
       </div>
       <FAQ />
+      <CardList />
     </main>
   );
 };

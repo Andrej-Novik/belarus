@@ -1,0 +1,28 @@
+@import "../../../assets/styles/common.scss";
+
+.card {
+  color: $white;
+  max-width: 22.5rem;
+
+  .img {
+    height: 28.75rem;
+    width: 100%;
+    border-radius: 2.75rem;
+    margin-bottom: 1.5rem;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 2.75rem;
+    }
+  }
+  .text {
+    .title {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .rate {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
