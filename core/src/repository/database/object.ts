@@ -27,14 +27,14 @@ class ObjectRepository implements IObjectsRepository {
   createObject = async (
     img: string,
     name: string,
-    country: string,
+    region: string,
     text: string,
     rate: number
   ) => {
     try {
       const response = await DBConnector.connector
         ?.getRepository(ObjectItem)
-        .save({ img, name, country, text, rate });
+        .save({ img, name, region, text, rate });
       return { value: response };
     } catch (e) {
       return { error: e };

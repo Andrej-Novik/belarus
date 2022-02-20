@@ -23,7 +23,7 @@ router.get("/pagination/", async (req, res) => {
     res.status(200).json(value);
 });
 router.post("", async (req, res) => {
-    const { value, error } = await useCases_1.default.ObjectsService.createObject(req.body.img, req.body.name, req.body.country, req.body.text, req.body.rate);
+    const { value, error } = await useCases_1.default.ObjectsService.createObject(req.body.img, req.body.name, req.body.region, req.body.text, req.body.rate);
     if (error) {
         res.status(500).json(error || new Error("UC undefined error"));
         return;

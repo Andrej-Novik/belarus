@@ -28,16 +28,14 @@ const CardList = ({
               <>
                 <div className={style.list}>
                   {objects
-                    .slice((currentPage - 1) * 10, 10 * currentPage)
+                    .slice((currentPage - 1) * 6, 6 * currentPage)
                     .map((card) => {
                       return (
                         <Card
                           key={card.name}
                           img={card.img}
                           title={card.name}
-                          country={card.country}
                           rate={card.rate}
-                          id={card.id}
                           likedData={likedData}
                           setLiked={setLiked}
                           deleteObg={deleteObg}

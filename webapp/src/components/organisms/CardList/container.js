@@ -14,7 +14,7 @@ import {
   setCurrentPage,
   isSearch as IsSearch,
 } from "../../../useCases/actions/objects";
- import json from "../../../content.json";
+import json from "../../../content.json";
 
 const CardListContainer = () => {
   const dispatch = useDispatch();
@@ -144,7 +144,7 @@ const CardListContainer = () => {
         onChangePage={onChangePage}
         // showObjects={showObjects}
       />
-      <button onClick={setObjects}>SET</button>
+      {/*<button onClick={setObjects}>SET</button>*/}
     </div>
   );
 };
