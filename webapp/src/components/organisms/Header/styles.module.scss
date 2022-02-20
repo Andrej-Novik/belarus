@@ -8,6 +8,7 @@
     justify-content: space-between;
     height: 5rem;
     .links {
+      @include H18;
       display: flex;
       gap: 3.5rem;
     }

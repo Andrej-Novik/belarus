@@ -1,0 +1,26 @@
+@import "../../../assets/styles/common.scss";
+
+.section {
+  background-color: $green;
+  margin-top: -0.5rem;
+  padding-top: 6rem;
+  .container {
+    @include container;
+    .title {
+      @include H1;
+      color: $white;
+      margin-bottom: 2rem;
+    }
+    .text {
+      max-width: 900px;
+      @include H24;
+      color: $white;
+      margin-bottom: 4rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+  }
+}

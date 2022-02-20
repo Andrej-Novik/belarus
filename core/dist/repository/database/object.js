@@ -27,10 +27,10 @@ class ObjectRepository {
                 return { error: e };
             }
         };
-        this.createObject = async (img, name, country, text, rate) => {
+        this.createObject = async (img, name, region, text, rate) => {
             var _a;
             try {
-                const response = await ((_a = connector_1.default.connector) === null || _a === void 0 ? void 0 : _a.getRepository(object_1.ObjectItem).save({ img, name, country, text, rate }));
+                const response = await ((_a = connector_1.default.connector) === null || _a === void 0 ? void 0 : _a.getRepository(object_1.ObjectItem).save({ img, name, region, text, rate }));
                 return { value: response };
             }
             catch (e) {

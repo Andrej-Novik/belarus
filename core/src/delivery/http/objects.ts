@@ -23,7 +23,7 @@ router.post("", async (req, res) => {
   const { value, error } = await UseCases.ObjectsService.createObject(
     req.body.img,
     req.body.name,
-    req.body.country,
+    req.body.region,
     req.body.text,
     req.body.rate,
   );

@@ -28,7 +28,7 @@ export class Core {
     return result;
   };
 
-  createObject = async (img, name, country, text, rate) => {
+  createObject = async (img, name, region, text, rate) => {
     const result = {
       value: null,
       error: null,
@@ -37,7 +37,7 @@ export class Core {
       const response = await Connector.connector.post(`/api/objects/`, {
         img,
         name,
-        country,
+        region,
         text,
         rate,
       });
