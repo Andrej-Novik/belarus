@@ -2,6 +2,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './assets/styles/common.scss'
 import Main from "./components/pages/Main";
 import Minsk from "./components/pages/Minsk";
+import Brest from "./components/pages/Brest";
+import Grodno from "./components/pages/Grodno";
+import Vitebsk from "./components/pages/Vitebsk";
+import Gomel from "./components/pages/Gomel";
+import Mogilev from "./components/pages/Mogilev";
 import Header from "./components/organisms/Header";
 import Footer from "./components/organisms/Footer";
 import style from "./app.module.scss";
@@ -16,6 +21,11 @@ function App() {
           <div className={style.content}>
 						<Route exact path="/" component={Main} />
 						<Route exact path="/minsk" component={Minsk} />
+						<Route exact path="/brest" component={Brest} />
+						<Route exact path="/grodno" component={Grodno} />
+						<Route exact path="/vitebsk" component={Vitebsk} />
+						<Route exact path="/gomel" component={Gomel} />
+						<Route exact path="/mogilev" component={Mogilev} />
           </div>
 				</Switch>
 				<Footer />

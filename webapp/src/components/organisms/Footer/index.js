@@ -7,17 +7,17 @@ const Footer = () => {
       <div className={style.container}>
         <div className={style.links}>
           <a href="#history">История</a>
-          <Link to={"/"}>Путешествия</Link>
+          <a href="#regions">Путешествия</a>
           <Link to={"/"}>Избранное</Link>
           <a href="#faq">FAQ</a>
         </div>
         <div className={style.places}>
-          <Link to={"/"}>Лучшие места Витебской области</Link>
-          <Link to={"/"}>Лучшие места брестской области</Link>
-          <Link to={"/"}>Лучшие места минской области</Link>
-          <Link to={"/"}>Лучшие места гродненской области</Link>
-          <Link to={"/"}>Лучшие места могилевской области</Link>
-          <Link to={"/"}>Лучшие места Гомельской области</Link>
+          <Link to={"/vitebsk"}>Лучшие места Витебской области</Link>
+          <Link to={"/brest"}>Лучшие места Брестской области</Link>
+          <Link to={"/minsk"}>Лучшие места Минской области</Link>
+          <Link to={"/grodno"}>Лучшие места Гродненской области</Link>
+          <Link to={"/mogilev"}>Лучшие места Могилевской области</Link>
+          <Link to={"/gomel"}>Лучшие места Гомельской области</Link>
         </div>
         <div className={style.about}>
           <h3>О проекте</h3>
