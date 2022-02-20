@@ -3,10 +3,8 @@ import style from './style.module.scss'
 const Card = ({
   img,
   title,
-  country,
   rate,
   text,
-  id,
   setLiked,
   likedData,
   deleteObg

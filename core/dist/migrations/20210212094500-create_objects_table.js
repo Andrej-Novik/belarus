@@ -25,7 +25,7 @@ class CreateObjectsTable20210212094500 {
                     isNullable: false,
                 },
                 {
-                    name: 'country',
+                    name: 'region',
                     type: 'varchar',
                     isNullable: false,
                 },

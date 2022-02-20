@@ -23,7 +23,7 @@ export class CreateObjectsTable20210212094500 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'country',
+            name: 'region',
             type: 'varchar',
             isNullable: false,
           },

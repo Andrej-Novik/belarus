@@ -18,14 +18,14 @@ class ObjectsService {
   createObject = async (
     img: string,
     name: string,
-    country: string,
+    region: string,
     text: string,
     rate: number
   ) => {
     const { value, error } = await ObjectRepository.createObject(
       img,
       name,
-      country,
+      region,
       text,
       rate
     );

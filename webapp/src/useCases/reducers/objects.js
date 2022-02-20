@@ -20,13 +20,13 @@ export const initialState = {
 	currentObject: {
 		img: "",
 		name: "",
-		country: "",
+		region: "",
 		text: "",
 		rate: "",
 		id: ""
 
 	},
-  objectsLength: 10,
+  objectsLength: 6,
   currentPage: 1,
   paginationPage: 1,
   isSearch: false,

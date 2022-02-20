@@ -14,7 +14,7 @@ export class ObjectItem {
 	@Column()
 	name: string
 	@Column()
-	country: string
+	region: string
 	@Column()
 	text: string
 	@Column()

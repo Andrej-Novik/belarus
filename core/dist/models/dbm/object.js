@@ -28,7 +28,7 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], ObjectItem.prototype, "country", void 0);
+], ObjectItem.prototype, "region", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)

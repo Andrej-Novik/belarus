@@ -23,8 +23,8 @@ class ObjectsService {
                 return { error: error };
             return { value: value };
         };
-        this.createObject = async (img, name, country, text, rate) => {
-            const { value, error } = await object_1.default.createObject(img, name, country, text, rate);
+        this.createObject = async (img, name, region, text, rate) => {
+            const { value, error } = await object_1.default.createObject(img, name, region, text, rate);
             if (error)
                 return { error: error };
             return { value: value };
