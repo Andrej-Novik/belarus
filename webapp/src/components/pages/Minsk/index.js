@@ -6,11 +6,8 @@ import img from "../../../assets/img/minsk-banner.png";
 const Main = () => {
   return (
     <main className={style.main}>
-      <Banner
-        img={img}
-        title={"Лучшие места Минской области"}
-      />
-      <CardList />
+      <Banner img={img} title={"Лучшие места Минской области"} />
+      <CardList regionType={"minsk"} />
     </main>
   );
 };

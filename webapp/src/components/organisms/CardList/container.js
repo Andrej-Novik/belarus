@@ -14,9 +14,9 @@ import {
   setCurrentPage,
   isSearch as IsSearch,
 } from "../../../useCases/actions/objects";
-import json from "../../../content.json";
+import json from "../../../places.json";
 
-const CardListContainer = () => {
+const CardListContainer = ({ regionType }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getObjectsFromBD());
@@ -118,17 +118,20 @@ const CardListContainer = () => {
         setObjectsIntoBD(
           json[i].img,
           json[i].name,
-          json[i].country,
+          json[i].region,
           json[i].text,
           json[i].rate
         )
       );
     }
   };
+
+  let regionObjects = objects.filter((i) => i.region === regionType);
+
   return (
     <div>
       <CardList
-        objects={objects}
+        objects={regionObjects}
         isError={isError}
         isLoader={isLoader}
         likedData={likedData}
@@ -144,7 +147,7 @@ const CardListContainer = () => {
         onChangePage={onChangePage}
         // showObjects={showObjects}
       />
-      {/*<button onClick={setObjects}>SET</button>*/}
+      <button onClick={setObjects}>SET</button>
     </div>
   );
 };
