@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import CardList from "./component";
 import {
   getObjectsFromBD,
-  //setObjectsIntoBD,
+  setObjectsIntoBD,
   setStateObjects,
   setSortObjects,
   setLikedObjects,
@@ -14,7 +14,7 @@ import {
   setCurrentPage,
   isSearch as IsSearch,
 } from "../../../useCases/actions/objects";
-// import json from "../../../content.json";
+ import json from "../../../content.json";
 
 const CardListContainer = () => {
   const dispatch = useDispatch();
@@ -112,19 +112,19 @@ const CardListContainer = () => {
     }
   };
 
-  //const setObjects = () => {
-  //  for (let i = 0; i <= json.length - 1; i++) {
-  //    dispatch(
-  //      setObjectsIntoBD(
-  //        json[i].img,
-  //        json[i].name,
-  //        json[i].country,
-  //        json[i].text,
-  //        json[i].rate
-  //      )
-  //    );
-  //  }
-  //};
+  const setObjects = () => {
+    for (let i = 0; i <= json.length - 1; i++) {
+      dispatch(
+        setObjectsIntoBD(
+          json[i].img,
+          json[i].name,
+          json[i].country,
+          json[i].text,
+          json[i].rate
+        )
+      );
+    }
+  };
   return (
     <div>
       <CardList
@@ -144,7 +144,7 @@ const CardListContainer = () => {
         onChangePage={onChangePage}
         // showObjects={showObjects}
       />
-      {/*<button onClick={setObjects}>SET</button>*/}
+      <button onClick={setObjects}>SET</button>
     </div>
   );
 };
