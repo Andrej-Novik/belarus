@@ -9,7 +9,7 @@
       flex: 0 1 50%;
       padding: 100px 0 200px 0;
       .title {
-        font-size: 100px;
+        @include H1;
         color: $black;
         margin: 0 0 1rem 0;
       }

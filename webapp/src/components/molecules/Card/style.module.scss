@@ -2,8 +2,16 @@
 
 .card {
   color: $white;
-  max-width: 22.5rem;
-
+  position: relative;
+  z-index: 2;
+  .liked {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    z-index: 30;
+    height: 2rem;
+  }
   .img {
     height: 28.75rem;
     width: 100%;

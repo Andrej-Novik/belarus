@@ -10,11 +10,11 @@ footer {
     padding-bottom: 6rem;
     color: $white;
     .links {
-      max-width: 158px;
-      padding-top: 3.5rem;
+      max-width: 11rem;
       display: flex;
       flex-direction: column;
       a {
+        @include BebasNeue();
         margin: 0 0 2rem 0;
         font-size: 30px;
       }
@@ -25,16 +25,18 @@ footer {
       a {
         margin: 0 0 2rem 0;
         @include H24;
+        @include BebasNeue();
         &:last-child {
           margin: 0;
         }
       }
     }
     .about {
-      max-width: 573px;
+      max-width: 30rem;
       h3 {
         margin: 0 0 1rem 0;
         font-size: 36px;
+        line-height: 1;
       }
       p {
         margin: 0 0 1rem 0;

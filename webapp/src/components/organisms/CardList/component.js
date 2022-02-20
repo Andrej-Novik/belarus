@@ -1,27 +1,33 @@
-import style from './style.module.scss'
-import Card from '../../molecules/Card'
-import Loader from '../../atoms/Loader'
-import Pagination from '../../molecules/Pagination'
-import row from '../../../assets/icons/next.svg'
+import style from "./style.module.scss";
+import Card from "../../molecules/Card";
+import Loader from "../../atoms/Loader";
+import Pagination from "../../molecules/Pagination";
+import Search from "../Search/";
+import Toggle from "../../molecules/Toggle";
+import { Link } from "react-router-dom";
+import row from "../../../assets/icons/next.svg";
 
 const CardList = ({
   objects,
   isLoader,
+  setLiked,
   sortUp,
   sortDown,
   isSearch,
   searchObject,
   backToCatalog,
   likedData,
-  setLiked,
-  deleteObg,
   objectsLength,
   currentPage,
-  onChangePage
+  onChangePage,
 }) => {
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
+        <div className={style.sort}>
+          <Toggle sortUp={sortUp} sortDown={sortDown} objects={objects} />
+          <Search />
+        </div>
         <>
           {!isSearch ? (
             objects.length ? (
@@ -31,22 +37,35 @@ const CardList = ({
                     .slice((currentPage - 1) * 6, 6 * currentPage)
                     .map((card) => {
                       return (
-                        <Card
-                          key={card.name}
-                          img={card.img}
-                          title={card.name}
-                          rate={card.rate}
-                          likedData={likedData}
-                          setLiked={setLiked}
-                          deleteObg={deleteObg}
-                        />
-                      )
+                        <Link to={`/object/${card.id}`}>
+                          <Card
+                            key={card.name}
+                            img={card.img}
+                            id={card.id}
+                            title={card.name}
+                            region={card.region}
+                            text={card.text}
+                            rate={card.rate}
+                            likedData={likedData}
+                            setLiked={setLiked}
+                          />
+                        </Link>
+                      );
                     })}
                 </div>
               </>
             ) : null
           ) : searchObject.length ? (
             <>
+              <button
+                to={"/catalog"}
+                className={style.link}
+                onClick={() => backToCatalog()}
+              >
+                <div>
+                  <div>Назад в каталог</div>
+                </div>
+              </button>
               <div className={style.list}>
                 {searchObject.map((card) => {
                   return (
@@ -54,25 +73,15 @@ const CardList = ({
                       key={card.name}
                       img={card.img}
                       title={card.name}
-                      country={card.country}
                       rate={card.rate}
+                      likedData={likedData}
+                      region={card.region}
+                      text={card.text}
                       id={card.id}
                       setLiked={setLiked}
-                      likedData={likedData}
-                      deleteObg={deleteObg}
                     />
-                  )
+                  );
                 })}
-                <button
-                  to={'/catalog'}
-                  className={style.link}
-                  onClick={() => backToCatalog()}
-                >
-                  <div>
-                    <img src={row} alt="img" />
-                    <div>Назад в каталог</div>
-                  </div>
-                </button>
               </div>
             </>
           ) : (
@@ -88,10 +97,13 @@ const CardList = ({
             </>
           )}
         </>
-        <Pagination objectsLength={objectsLength} onChangePage={onChangePage} currentPage={currentPage}/>
+        <Pagination
+          onChangePage={onChangePage}
+          currentPage={currentPage}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CardList
+export default CardList;

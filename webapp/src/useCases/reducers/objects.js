@@ -11,21 +11,20 @@ import {
   SEARCH_OBJECTS,
   GET_OBJECTS_LENGTH,
   SET_CURRENT_PAGE,
-  SET_PAGINATION_PAGE
+  SET_PAGINATION_PAGE,
 } from "../actionTypes/objects";
 
 export const initialState = {
   objects: [],
   likedObjects: JSON.parse(localStorage.getItem("liked")) || [],
-	currentObject: {
-		img: "",
-		name: "",
-		region: "",
-		text: "",
-		rate: "",
-		id: ""
-
-	},
+  currentObject: {
+    img: "",
+    name: "",
+    region: "",
+    text: "",
+    rate: "",
+    id: "",
+  },
   objectsLength: 6,
   currentPage: 1,
   paginationPage: 1,
@@ -38,16 +37,16 @@ export const initialState = {
 
 const objects = (state = initialState, action) => {
   switch (action.type) {
-    case SET_STATE_OBJECTS: {
-      return {
-        ...state,
-        objects: action.payload,
-      };
-    }
     case SET_LIKED_OBJECTS: {
       return {
         ...state,
         likedObjects: JSON.parse(localStorage.getItem("liked")) || [],
+      };
+    }
+    case SET_STATE_OBJECTS: {
+      return {
+        ...state,
+        objects: action.payload,
       };
     }
     case SET_SORT_OBJECTS: {
@@ -102,20 +101,20 @@ const objects = (state = initialState, action) => {
     case GET_OBJECTS_LENGTH: {
       return {
         ...state,
-        objectsLength: action.payload
-      }
+        objectsLength: action.payload,
+      };
     }
     case SET_CURRENT_PAGE: {
       return {
         ...state,
-        currentPage: action.payload
-      }
+        currentPage: action.payload,
+      };
     }
     case SET_PAGINATION_PAGE: {
       return {
         ...state,
-        paginationPage: action.payload
-      }
+        paginationPage: action.payload,
+      };
     }
 
     default:

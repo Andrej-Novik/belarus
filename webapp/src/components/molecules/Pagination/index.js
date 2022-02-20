@@ -1,11 +1,12 @@
-import style from './style.module.scss'
-import Button from '../../atoms/Button'
-import { createPages } from '../../../useCases/actions/paginationCreate'
+import style from "./style.module.scss";
+import Button from "../../atoms/Button";
+import { createPages } from "../../../useCases/actions/paginationCreate";
 
-const Pagination = ({ objectsLength, currentPage, onChangePage }) => {
-  const buttons = []
+const Pagination = ({ currentPage, onChangePage }) => {
+  let objectsLength = 12;
+  const buttons = [];
   if (objectsLength > 0)
-    createPages(buttons, Math.ceil(objectsLength / 10), currentPage)
+    createPages(buttons, Math.ceil(objectsLength / 10), currentPage);
   return (
     <div className={style.paginator} data-pagination-component>
       <Button
@@ -25,7 +26,7 @@ const Pagination = ({ objectsLength, currentPage, onChangePage }) => {
           </svg>
         }
         transparent={true}
-        onClick={() => onChangePage(false, 'prev')}
+        onClick={() => onChangePage(false, "prev")}
       />
       <div className={style.block}>
         <div className={style.blockButtons}>
@@ -40,11 +41,11 @@ const Pagination = ({ objectsLength, currentPage, onChangePage }) => {
               />
             ))}
         </div>
-        <Button
+        {/*<Button
           data-test-end
-          value={'...'}
-          onClick={() => onChangePage(false, 'end')}
-        />
+          value={"..."}
+          onClick={() => onChangePage(false, "end")}
+        />*/}
       </div>
       <Button
         value={
@@ -63,10 +64,10 @@ const Pagination = ({ objectsLength, currentPage, onChangePage }) => {
           </svg>
         }
         transparent={true}
-        onClick={() => onChangePage(false, 'next')}
+        onClick={() => onChangePage(false, "next")}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

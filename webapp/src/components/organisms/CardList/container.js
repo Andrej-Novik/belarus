@@ -6,11 +6,10 @@ import {
   setObjectsIntoBD,
   setStateObjects,
   setSortObjects,
-  setLikedObjects,
-  deleteObjectFromBD,
   setSearchObjects,
   setObjectsLength,
-  setPaginationPage,
+	setPaginationPage,
+	setLikedObjects,
   setCurrentPage,
   isSearch as IsSearch,
 } from "../../../useCases/actions/objects";
@@ -52,10 +51,6 @@ const CardListContainer = ({ regionType }) => {
     const obj = object.sort((a, b) => (a.rate > b.rate ? -1 : 1));
     dispatch(setStateObjects(obj));
     dispatch(setSortObjects("down"));
-  };
-
-  const deleteObg = (id) => {
-    dispatch(deleteObjectFromBD(id));
   };
 
   const setLiked = (obj) => {
@@ -131,14 +126,13 @@ const CardListContainer = ({ regionType }) => {
   return (
     <div>
       <CardList
-        objects={regionObjects}
+				objects={regionObjects}
+				setLiked={setLiked}
         isError={isError}
         isLoader={isLoader}
         likedData={likedData}
         sortUp={sortUp}
         sortDown={sortDown}
-        setLiked={setLiked}
-        deleteObg={deleteObg}
         searchObject={searchObject}
         isSearch={isSearch}
         backToCatalog={backToCatalog}

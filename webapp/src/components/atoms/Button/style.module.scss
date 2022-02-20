@@ -1,4 +1,4 @@
-@import '../../../assets/styles/colors.scss';
+@import "../../../assets/styles/colors.scss";
 
 .button {
   min-width: 4.375rem;
@@ -8,6 +8,7 @@
   margin-right: 0.9375rem;
   background: none;
   border-radius: 50%;
+  color: $white;
   cursor: pointer;
   &:last-child {
     margin-right: 0;
@@ -38,7 +39,7 @@
   background: $white;
 }
 
-[color='transparent'] {
+[color="transparent"] {
   color: $primary;
   background: $white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

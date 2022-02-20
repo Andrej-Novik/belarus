@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={style.links}>
           <a href="#history">История</a>
           <a href="#regions">Путешествия</a>
-          <Link to={"/"}>Избранное</Link>
+          <Link to={"/liked"}>Избранное</Link>
           <a href="#faq">FAQ</a>
         </div>
         <div className={style.places}>

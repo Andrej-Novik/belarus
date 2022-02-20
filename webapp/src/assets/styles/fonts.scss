@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 
 @mixin H1 {
-  font-size: 7.5rem;
+  @include BebasNeueCyrillic;
+  font-size: 6.5rem;
   line-height: 7.5rem;
 }
 @mixin H18 {
   font-size: 1.125rem;
   line-height: 1.625rem;
+  font-weight: 300;
 }
 @mixin H24 {
   font-size: 1.5rem;
@@ -15,4 +17,27 @@
 @mixin H32 {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/BebasNeue Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bebas Neue Cyrillic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Bebas Neue K.ttf") format("truetype");
+}
+
+@mixin BebasNeue {
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+}
+@mixin BebasNeueCyrillic {
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
 }

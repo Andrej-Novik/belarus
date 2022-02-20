@@ -36,20 +36,7 @@ export const setCurrentObject = (object) => {
 export const changeRate = (id, rate) => {
   return { type: CHANGE_RATE, id, rate };
 };
-export const removeObject = (id) => {
-  return { type: DELETE_OBJECT, id };
-};
 
-export const deleteObjectFromBD = (id) => async (dispatch) => {
-  dispatch(objectsLoading(true));
-  const { value, error } = await Repository.APIObjects.deleteObject(id);
-  if (error || !value) {
-    dispatch(loadingError(true));
-  } else {
-    dispatch(removeObject(id));
-  }
-  dispatch(objectsLoading(false));
-};
 
 export const getObjectsFromBD = () => async (dispatch) => {
   dispatch(objectsLoading(true));

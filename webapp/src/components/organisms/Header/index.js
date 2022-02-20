@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from "./styles.module.scss";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
           <Link to={"/"}>Главная</Link>
           <a href="#history">История</a>
           <a href="#regions">Путешествия</a>
-          <Link to={"/"}>Избранное</Link>
+          <Link to={"/liked"}>Избранное</Link>
           <a href="#faq">FAQ</a>
         </div>
       </div>
