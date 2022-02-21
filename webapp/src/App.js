@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className={style.wrapper}>
-        <Header />
+        {/*<Header />*/}
         <Switch>
           <div className={style.content}>
             <Route exact path="/" component={Main} />

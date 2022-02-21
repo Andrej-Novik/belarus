@@ -1,10 +1,15 @@
 import Card from "../../molecules/Card";
 import style from "./style.module.scss";
 import img from "../../../assets/img/liked.png";
+import History from "../../organisms/History";
+import FAQ from "../../organisms/FAQ";
+import { Link } from "react-router-dom";
+import Header from "../../organisms/Header";
 
 const Liked = ({ liked, likedData, setLiked }) => {
   return (
     <div className={style.wrapper}>
+      <Header />
       <div className={style.banner}>
         <div className={style.image}>
           <img src={img} />
@@ -26,24 +31,27 @@ const Liked = ({ liked, likedData, setLiked }) => {
         <div className={style.container}>
           {liked.map((card) => {
             return (
-              <Card
-                key={card.img}
-                img={card.img}
-                title={card.title}
-                rate={card.rate}
-                id={card.id}
-                likedData={likedData}
-                setLiked={setLiked}
-              />
+              <Link to={`/object/${card.id}`}>
+                <Card
+                  key={card.img}
+                  img={card.img}
+                  title={card.title}
+                  rate={card.rate}
+                  id={card.id}
+                  likedData={likedData}
+                  setLiked={setLiked}
+                />
+              </Link>
             );
           })}
-				</div>
-				
+        </div>
       ) : (
         <div className={style.container}>
           <h3>Нет добавленных объктов</h3>
         </div>
       )}
+      <History />
+      <FAQ />
     </div>
   );
 };

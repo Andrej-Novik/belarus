@@ -69,17 +69,19 @@ const CardList = ({
               <div className={style.list}>
                 {searchObject.map((card) => {
                   return (
-                    <Card
-                      key={card.name}
-                      img={card.img}
-                      title={card.name}
-                      rate={card.rate}
-                      likedData={likedData}
-                      region={card.region}
-                      text={card.text}
-                      id={card.id}
-                      setLiked={setLiked}
-                    />
+                    <Link to={`/object/${card.id}`}>
+                      <Card
+                        key={card.name}
+                        img={card.img}
+                        title={card.name}
+                        rate={card.rate}
+                        likedData={likedData}
+                        region={card.region}
+                        text={card.text}
+                        id={card.id}
+                        setLiked={setLiked}
+                      />
+                    </Link>
                   );
                 })}
               </div>
@@ -97,10 +99,7 @@ const CardList = ({
             </>
           )}
         </>
-        <Pagination
-          onChangePage={onChangePage}
-          currentPage={currentPage}
-        />
+        <Pagination onChangePage={onChangePage} currentPage={currentPage} />
       </div>
     </div>
   );
