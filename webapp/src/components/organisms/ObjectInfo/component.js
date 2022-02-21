@@ -4,7 +4,7 @@ import Loader from "../../atoms/Loader";
 import row from "../../../assets/icons/rowToLeft.svg";
 import style from "./style.module.scss";
 
-const ObjectInfo = ({ img, name, text, rate, isError, isLoader }) => {
+const ObjectInfo = ({ img, name, text, rate, isError, isLoader, id }) => {
   let [error, changeError] = useState(false);
 
   let temp = [];

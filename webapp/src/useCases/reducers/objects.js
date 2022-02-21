@@ -6,7 +6,6 @@ import {
   CHANGE_RATE,
   SET_SORT_OBJECTS,
   SET_LIKED_OBJECTS,
-  DELETE_OBJECT,
   IS_SEARCH,
   SEARCH_OBJECTS,
   GET_OBJECTS_LENGTH,
@@ -78,12 +77,6 @@ const objects = (state = initialState, action) => {
       return {
         ...state,
         currentObject: { ...state.currentObject, rate },
-      };
-    }
-    case DELETE_OBJECT: {
-      return {
-        ...state,
-        objects: state.objects.filter((i) => i.id !== action.id),
       };
     }
     case IS_SEARCH: {

@@ -12,11 +12,6 @@ class ObjectsService {
                 return { error: error };
             return { value: value };
         };
-        // getUser = async (id: string) => {
-        //   const { value, error } = await UsersRepository.getUser(id);
-        //   if (error) return { error: error };
-        //   return { value: value };
-        // };
         this.getObject = async (id) => {
             const { value, error } = await object_1.default.getObject(id);
             if (error)
@@ -25,18 +20,6 @@ class ObjectsService {
         };
         this.createObject = async (img, name, region, text, rate) => {
             const { value, error } = await object_1.default.createObject(img, name, region, text, rate);
-            if (error)
-                return { error: error };
-            return { value: value };
-        };
-        this.deleteObject = async (id) => {
-            const { value, error } = await object_1.default.deleteObject(id);
-            if (error)
-                return { error: error };
-            return { value: value };
-        };
-        this.editObject = async (id, rate) => {
-            const { value, error } = await object_1.default.editObject(id, rate);
             if (error)
                 return { error: error };
             return { value: value };
@@ -53,25 +36,6 @@ class ObjectsService {
                 return { error: error };
             return { value: value };
         };
-        // deleteUser = async (id: string) => {
-        //   const { value, error } = await UsersRepository.deleteUser(id);
-        //   if (error) return { error: error };
-        //   return { value: value };
-        // };
-        // editUser = async (id: string, firstName: string, lastName: string) => {
-        //   const { value, error } = await UsersRepository.editUser(
-        //     id,
-        //     firstName,
-        //     lastName
-        //   );
-        //   if (error) return { error: error };
-        //   return { value: value };
-        // };
-        // getUser = async (id: string) => {
-        //   const { value, error } = await UsersRepository.getUser(id);
-        //   if (error) return { error: error };
-        //   return { value: value };
-        // };
     }
 }
 exports.default = new ObjectsService();

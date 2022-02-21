@@ -6,7 +6,6 @@ import {
   CHANGE_RATE,
   SET_SORT_OBJECTS,
 	SET_LIKED_OBJECTS,
-	DELETE_OBJECT,
   IS_SEARCH,
   SEARCH_OBJECTS,
   GET_OBJECTS_LENGTH,
@@ -74,17 +73,6 @@ export const setObjectsIntoBD =
     dispatch(setStateObjects(value));
     dispatch(objectsLoading(false));
   };
-
-export const updateRate = (id, rate) => async (dispatch) => {
-  dispatch(objectsLoading(true));
-  const { value, error } = await Repository.APIObjects.updateObject(id, rate);
-  if (error || !value) {
-    dispatch(loadingError(true));
-  } else {
-    dispatch(changeRate(id, rate));
-  }
-  dispatch(objectsLoading(false));
-};
 
 export const setSearchObjects = (data) => ({
   type: SEARCH_OBJECTS,
